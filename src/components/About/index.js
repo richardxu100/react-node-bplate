@@ -12,7 +12,7 @@ export default class About extends Component {
     const { className, ... props } = this.props;
     return (
       <div className={classnames('About', className)} {...props}>
-        <h1>About</h1>
+        <h1>Okay</h1>
       </div>
     )
   }

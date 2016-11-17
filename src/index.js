@@ -1,11 +1,12 @@
+/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory } from 'react-router';
-import Routes from './routes';
 
 import './index.css';
+import routes from './routes';
 
-ReactDOM.render(
-  <Routes history={browserHistory} />,
-  document.getElementById('root')
-);
+if (module.hot) {
+  module.hot.accept();
+}
+
+ReactDOM.render(routes, document.getElementById('root'));
