@@ -13,7 +13,7 @@ export default class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Ahh phew</h2>
+          <h2>Ahh phew noo yoo</h2>
         </div>
         <p className="App-intro">
           To asdfasf started, edit <code>src/App.js</code> and save to reload.
