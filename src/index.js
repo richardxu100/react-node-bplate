@@ -1,11 +1,12 @@
+// eslint-disable-next-line
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory } from 'react-router';
-import Routes from './routes';
+
+import routes from './routes';
 
 import './index.css';
 
 ReactDOM.render(
-  <Routes history={browserHistory} />,
+  routes,
   document.getElementById('root')
 );
