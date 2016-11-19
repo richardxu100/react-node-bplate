@@ -67,7 +67,7 @@
     "dev": "node scripts/start.js",
     "start": "node server/index.js",
     "build": "node scripts/build.js",
-    "postinstall": "webpack -p",
+    "postinstall": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
