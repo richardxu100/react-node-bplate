@@ -4,9 +4,18 @@ import logo from './logo.svg';
 import './style.css';
 
 export default class App extends Component {
-  // static propTypes = {}
-  // static defaultProps = {}
-  // state = {}
+  constructor() {
+    super();
+    this.state = { text: '' }
+  }
+
+  handleTextChange = (e) => this.setState({text: e.target.value});
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.commentStore.addComment(this.state.text);
+    this.setState({text: ''});
+  }
 
   render() {
     return (
@@ -18,6 +27,20 @@ export default class App extends Component {
         <p className="App-intro">
           To asdfasf started, edit <code>src/App.js</code> and save to reload.
         </p>
+
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            onChange={this.handleTextChange}
+            value={this.state.text} />
+          <input type="submit" style={{display: 'none'}}/>
+        </form>
+
+        <ul>
+          {this.props.commentStore.comments.map((comment, i) =>
+            <li key={i}>{comment.text}</li>
+          )}
+        </ul>
       </div>
     );
   }
